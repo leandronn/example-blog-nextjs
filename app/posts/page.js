@@ -7,16 +7,18 @@ export default async function PostsPage() {
   return (
     <div>
       <h1>All Blog Posts</h1>
-      <ul>
+      <hr style={{ width: '220px' }} />
+
+      <div style={{ paddingTop: '40px' }}>
         {posts.map(post => (
-          <li key={post.id}>
+          <article key={post.id}>
             <Link href={`posts/${post.id}`}>
               <h2>{post.title}</h2>
             </Link>
-            <p>{post.body}</p>
-          </li>
+            <p style={{ paddingBottom: '30px'}}>{post.body}</p>
+          </article>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }

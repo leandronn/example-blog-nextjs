@@ -16,19 +16,17 @@ export default function SinglePost({params}) {
 
   useEffect(() => {
     fetchPost(params.id);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   
   return (
-    <div>
+    <div style={{ paddingTop: '20px', paddingLeft: '20px' }}>
       <Link href='/'>Back to home</Link>
-      <br/>
-      <div>
+      <div style={{ paddingTop: '50px' }}>
         <article>
-          <h1>{post?.title}</h1>
-          {post?.tags.map((tag, index) => <span key={index}>{tag} | </span>)}
+          <h1 style={{ paddingBottom: '10px' }}>{post?.title}</h1>
+          {post?.tags.map((tag, index) => <span style={{ fontWeight: 'lighter' }} key={index}>{tag} | </span>)}
           <br/>
-          <p>{post?.body}</p>
+          <p style={{ paddingTop: '10px' }}>{post?.body}</p>
         </article>
       </div>
     </div>
